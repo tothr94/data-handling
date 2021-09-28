@@ -22,7 +22,15 @@ class Car:
     plate: str = field(hash=True)
     type: str = field(compare=False)
     year: int = field(compare=False)
-    automatic: bool = field(compare=False)
+    automatic: bool = field(compare=False, default=True)
+
+@dataclass(unsafe_hash=True)
+class Airport:
+    code: str = field(hash=True)
+    name: str = field(compare=False)
+    city: str = field(compare=False)
+    state: str = field(compare=False)
+    country: str = field(compare=False)
 
 
 if __name__ == "__main__":
