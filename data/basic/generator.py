@@ -19,7 +19,7 @@ def generate_people(n: int, male_ratio: float = 0.5,
 
     people = []
     fake = Faker(locale)
-    Faker.seed(0)
+    # Faker.seed(0)
     fake = fake if not unique else fake.unique
     for i in range(n):
         male = random.random() < male_ratio
@@ -41,7 +41,7 @@ def generate_cars(n: int, automatic_ratio: float = 0.2,
 
     assert n > 0
     assert 0 <= automatic_ratio <= 1
-    assert 1908 >= min_year
+    assert 1908 <= min_year
     assert min_year <= max_year <= 2021
 
     fake_plate = Faker(locale)
